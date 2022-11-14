@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
 import bg from "/public/static/img_bg_1.jpg";
 
 const Hero = () => {
