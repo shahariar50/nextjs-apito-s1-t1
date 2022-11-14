@@ -604,7 +604,8 @@ body {
 .fancy-collapse-panel .panel-default > .panel-heading {
   padding: 0;
 }
-.panel-heading a {
+.panel-heading a,
+.accordion-header:not(.collapsed) button {
   padding: 20px 25px;
   display: block;
   width: 100%;
@@ -630,7 +631,8 @@ body {
   box-shadow: none !important;
   border: none;
 }
-.panel-heading a:after {
+.panel-heading a:after,
+.accordion-header button:after {
   font-family: "icomoon";
   content: "\e115";
   position: absolute;
@@ -642,12 +644,14 @@ body {
   margin-top: -7px;
 }
 
-.panel-heading a.collapsed:after {
+.panel-heading a.collapsed:after,
+.accordion-header button.collapsed:after {
   content: "\e114";
 }
-.panel-heading a.collapsed {
+.panel-heading a.collapsed,
+.accordion-header button.collapsed {
   background: $brand-gray;
-  border: 1px solid lighten($brand-black, 90%) !important;
+  // border: 1px solid lighten($brand-black, 90%) !important;
   color: lighten($brand-black, 20%);
 }
 .panel-body {
