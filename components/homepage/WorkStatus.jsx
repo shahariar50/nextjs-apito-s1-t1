@@ -4,17 +4,17 @@ const WorkStatus = () => {
   return (
     <section
       id="colorlib-counter"
-      class="colorlib-counters"
+      className="colorlib-counters"
       style={{ backgroundImage: `url(${bg?.src})` }}
       data-stellar-background-ratio="0.5"
     >
-      <div class="overlay"></div>
-      <div class="colorlib-narrow-content">
-        <div class="row"></div>
-        <div class="row">
-          <div class="col-md-3 text-center animate-box">
+      <div className="overlay"></div>
+      <div className="colorlib-narrow-content">
+        <div className="row"></div>
+        <div className="row">
+          <div className="col-md-3 text-center animate-box">
             <span
-              class="colorlib-counter js-counter"
+              className="colorlib-counter js-counter"
               data-from="0"
               data-to="309"
               data-speed="5000"
@@ -22,11 +22,11 @@ const WorkStatus = () => {
             >
               309
             </span>
-            <span class="colorlib-counter-label">Cups of coffee</span>
+            <span className="colorlib-counter-label">Cups of coffee</span>
           </div>
-          <div class="col-md-3 text-center animate-box">
+          <div className="col-md-3 text-center animate-box">
             <span
-              class="colorlib-counter js-counter"
+              className="colorlib-counter js-counter"
               data-from="0"
               data-to="356"
               data-speed="5000"
@@ -34,11 +34,11 @@ const WorkStatus = () => {
             >
               356
             </span>
-            <span class="colorlib-counter-label">Projects</span>
+            <span className="colorlib-counter-label">Projects</span>
           </div>
-          <div class="col-md-3 text-center animate-box">
+          <div className="col-md-3 text-center animate-box">
             <span
-              class="colorlib-counter js-counter"
+              className="colorlib-counter js-counter"
               data-from="0"
               data-to="30"
               data-speed="5000"
@@ -46,11 +46,11 @@ const WorkStatus = () => {
             >
               30
             </span>
-            <span class="colorlib-counter-label">Clients</span>
+            <span className="colorlib-counter-label">Clients</span>
           </div>
-          <div class="col-md-3 text-center animate-box">
+          <div className="col-md-3 text-center animate-box">
             <span
-              class="colorlib-counter js-counter"
+              className="colorlib-counter js-counter"
               data-from="0"
               data-to="10"
               data-speed="5000"
@@ -58,7 +58,7 @@ const WorkStatus = () => {
             >
               10
             </span>
-            <span class="colorlib-counter-label">Partners</span>
+            <span className="colorlib-counter-label">Partners</span>
           </div>
         </div>
       </div>

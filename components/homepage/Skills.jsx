@@ -1,18 +1,21 @@
 const Skills = () => {
   return (
-    <section class="colorlib-skills" data-section="skills">
-      <div class="colorlib-narrow-content">
-        <div class="row">
+    <section className="colorlib-skills" data-section="skills">
+      <div className="colorlib-narrow-content">
+        <div className="row">
           <div
-            class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
+            className="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
             data-animate-effect="fadeInLeft"
           >
-            <span class="heading-meta">My Specialty</span>
-            <h2 class="colorlib-heading animate-box">My Skills</h2>
+            <span className="heading-meta">My Specialty</span>
+            <h2 className="colorlib-heading animate-box">My Skills</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+        <div className="row">
+          <div
+            className="col-md-12 animate-box"
+            data-animate-effect="fadeInLeft"
+          >
             <p>
               The Big Oxmox advised her not to do so, because there were
               thousands of bad Commas, wild Question Marks and devious Semikoli,
@@ -21,12 +24,15 @@ const Skills = () => {
               way.
             </p>
           </div>
-          <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-            <div class="progress-wrap">
+          <div
+            className="col-md-6 animate-box"
+            data-animate-effect="fadeInLeft"
+          >
+            <div className="progress-wrap">
               <h3>Photoshop</h3>
-              <div class="progress">
+              <div className="progress">
                 <div
-                  class="progress-bar color-1"
+                  className="progress-bar color-1"
                   role="progressbar"
                   aria-valuenow="75"
                   aria-valuemin="0"
@@ -38,12 +44,15 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-            <div class="progress-wrap">
+          <div
+            className="col-md-6 animate-box"
+            data-animate-effect="fadeInRight"
+          >
+            <div className="progress-wrap">
               <h3>jQuery</h3>
-              <div class="progress">
+              <div className="progress">
                 <div
-                  class="progress-bar color-2"
+                  className="progress-bar color-2"
                   role="progressbar"
                   aria-valuenow="60"
                   aria-valuemin="0"
@@ -55,12 +64,15 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-            <div class="progress-wrap">
+          <div
+            className="col-md-6 animate-box"
+            data-animate-effect="fadeInLeft"
+          >
+            <div className="progress-wrap">
               <h3>HTML5</h3>
-              <div class="progress">
+              <div className="progress">
                 <div
-                  class="progress-bar color-3"
+                  className="progress-bar color-3"
                   role="progressbar"
                   aria-valuenow="85"
                   aria-valuemin="0"
@@ -72,12 +84,15 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-            <div class="progress-wrap">
+          <div
+            className="col-md-6 animate-box"
+            data-animate-effect="fadeInRight"
+          >
+            <div className="progress-wrap">
               <h3>CSS3</h3>
-              <div class="progress">
+              <div className="progress">
                 <div
-                  class="progress-bar color-4"
+                  className="progress-bar color-4"
                   role="progressbar"
                   aria-valuenow="90"
                   aria-valuemin="0"
@@ -89,12 +104,15 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-            <div class="progress-wrap">
+          <div
+            className="col-md-6 animate-box"
+            data-animate-effect="fadeInLeft"
+          >
+            <div className="progress-wrap">
               <h3>WordPress</h3>
-              <div class="progress">
+              <div className="progress">
                 <div
-                  class="progress-bar color-5"
+                  className="progress-bar color-5"
                   role="progressbar"
                   aria-valuenow="70"
                   aria-valuemin="0"
@@ -106,12 +124,15 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-            <div class="progress-wrap">
+          <div
+            className="col-md-6 animate-box"
+            data-animate-effect="fadeInRight"
+          >
+            <div className="progress-wrap">
               <h3>SEO</h3>
-              <div class="progress">
+              <div className="progress">
                 <div
-                  class="progress-bar color-6"
+                  className="progress-bar color-6"
                   role="progressbar"
                   aria-valuenow="80"
                   aria-valuemin="0"

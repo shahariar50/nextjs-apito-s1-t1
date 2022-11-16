@@ -3,19 +3,19 @@ import bg from "/public/static/img_bg_1.jpg";
 
 const Hero = () => {
   return (
-    <section id="colorlib-hero" class="js-fullheight" data-section="home">
+    <section id="colorlib-hero" className="js-fullheight" data-section="home">
       <div className="flexslider js-fullheight">
         <div className="slides">
           <div
             className="flexsliderInner"
             style={{ backgroundImage: `url(${bg.src})`, height: "100vh" }}
           >
-            <div class="overlay"></div>
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                  <div class="slider-text-inner js-fullheight">
-                    <div class="desc">
+            <div className="overlay"></div>
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+                  <div className="slider-text-inner js-fullheight">
+                    <div className="desc">
                       <h1>
                         Hi! <br />
                         I'm Jackson
@@ -31,8 +31,8 @@ const Hero = () => {
                         </a>
                       </h2>
                       <p>
-                        <a class="btn btn-primary btn-learn">
-                          Download CV <i class="icon-download4"></i>
+                        <a className="btn btn-primary btn-learn">
+                          Download CV <i className="icon-download4"></i>
                         </a>
                       </p>
                     </div>

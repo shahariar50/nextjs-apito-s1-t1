@@ -1222,7 +1222,12 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
-jquery@>=1.8.3:
+jquery-waypoints@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/jquery-waypoints/-/jquery-waypoints-2.0.5.tgz#c302b188e2957ed763098793304a76356aeeee04"
+  integrity sha512-QZ1dS3934t4ifNrbOvonTtRmSHyWhKWYeMUMdd1ntzYw3ALADCYOrdF+WAhOrvzOZams3Unh2rY1l/E5dsqX6w==
+
+jquery@>=1.8.3, jquery@^3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.1.tgz#fab0408f8b45fc19f956205773b62b292c147a16"
   integrity sha512-opJeO4nCucVnsjiXOE+/PcCgYw9Gwpvs/a6B1LL/lQhwWwpbVEVYDZ1FokFr8PRc7ghYlrFPuyHuiiDNTQxmcw==

@@ -2,34 +2,37 @@ import { Accordion } from "react-bootstrap";
 
 const Education = () => {
   return (
-    <section class="colorlib-education" data-section="education">
-      <div class="colorlib-narrow-content">
-        <div class="row">
+    <section className="colorlib-education" data-section="education">
+      <div className="colorlib-narrow-content">
+        <div className="row">
           <div
-            class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
+            className="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
             data-animate-effect="fadeInLeft"
           >
-            <span class="heading-meta">Education</span>
-            <h2 class="colorlib-heading animate-box">Education</h2>
+            <span className="heading-meta">Education</span>
+            <h2 className="colorlib-heading animate-box">Education</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+        <div className="row">
+          <div
+            className="col-md-12 animate-box"
+            data-animate-effect="fadeInLeft"
+          >
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>
                   Master Degree Graphic Design
                 </Accordion.Header>
                 <Accordion.Body>
-                  <div class="row">
-                    <div class="col-md-6">
+                  <div className="row">
+                    <div className="col-md-6">
                       <p>
                         Far far away, behind the word mountains, far from the
                         countries Vokalia and Consonantia, there live the blind
                         texts.{" "}
                       </p>
                     </div>
-                    <div class="col-md-6">
+                    <div className="col-md-6">
                       <p>
                         Separated they live in Bookmarksgrove right at the coast
                         of the Semantics, a large language ocean.
