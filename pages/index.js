@@ -9,7 +9,6 @@ import Services from "components/homepage/Services";
 import Skills from "components/homepage/Skills";
 import Work from "components/homepage/Work";
 import WorkStatus from "components/homepage/WorkStatus";
-import Script from "next/script";
 import { useEffect } from "react";
 import "/public/static/js/loader.js";
 

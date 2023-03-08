@@ -1,7 +1,9 @@
+import { Element } from "react-scroll";
+
 /* eslint-disable react/no-unescaped-entities */
 const About = () => {
   return (
-    <section className="colorlib-about" data-section="about">
+    <Element name="about" className="colorlib-about" data-section="about">
       <div className="colorlib-narrow-content">
         <div className="row">
           <div className="col-md-12">
@@ -95,7 +97,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 

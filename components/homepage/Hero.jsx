@@ -1,9 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Element } from "react-scroll";
 import bg from "/public/static/img_bg_1.jpg";
 
 const Hero = () => {
   return (
-    <section id="colorlib-hero" className="js-fullheight" data-section="home">
+    <Element
+      name="hero"
+      id="colorlib-hero"
+      className="js-fullheight"
+      data-section="home"
+    >
       <div className="flexslider js-fullheight">
         <div className="slides">
           <div
@@ -43,7 +49,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 

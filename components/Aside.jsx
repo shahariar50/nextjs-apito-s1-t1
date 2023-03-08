@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-scroll";
 
 const Aside = () => {
   return (
@@ -24,49 +24,103 @@ const Aside = () => {
         <div id="navbar" className="collapse">
           <ul>
             <li className="active">
-              <a href="#" data-nav-section="home">
+              <Link
+                activeClass="active"
+                to="hero"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" data-nav-section="about">
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" data-nav-section="services">
+              <Link
+                activeClass="active"
+                to="services"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" data-nav-section="skills">
+              <Link
+                activeClass="active"
+                to="skills"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Skills
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" data-nav-section="education">
+              <Link
+                activeClass="active"
+                to="education"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Education
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" data-nav-section="experience">
+              <Link
+                activeClass="active"
+                to="experience"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Experience
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" data-nav-section="work">
+              <Link
+                activeClass="active"
+                to="work"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Work
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" data-nav-section="blog">
+              <Link
+                activeClass="active"
+                to="blog"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Blog
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" data-nav-section="contact">
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -247,6 +247,7 @@ figure {
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 1px;
+        cursor: pointer;
         a {
           color: rgba(0, 0, 0, 0.7);
           text-decoration: none;
@@ -287,9 +288,7 @@ figure {
               transform: scaleX(1);
             }
           }
-        }
-        &.active {
-          a {
+          &.active {
             color: $brand-primary;
             &:after {
               visibility: visible;
