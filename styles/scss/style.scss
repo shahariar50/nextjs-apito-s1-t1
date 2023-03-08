@@ -362,21 +362,21 @@ figure {
   float: left;
   margin-bottom: 10em;
   clear: both;
-  .flexslider {
-    border: none;
-    z-index: 1;
-    margin-bottom: 0;
+  .swiper {
+    // border: none;
+    // z-index: 1;
+    // margin-bottom: 0;
 
-    .slides {
+    .swiper-slide {
+      // position: relative;
+      // overflow: visible;
+      // .flexsliderInner {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom center;
+      min-height: 400px;
       position: relative;
-      overflow: visible;
-      .flexsliderInner {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: bottom center;
-        min-height: 400px;
-        position: relative;
-      }
+      // }
     }
     .flex-control-nav {
       bottom: 20px;

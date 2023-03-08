@@ -3,6 +3,8 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useEffect } from "react";
 import { Events } from "react-scroll";
+import "swiper/css";
+import "swiper/scss/pagination";
 import "../styles/animate.css";
 import "../styles/bootstrap.css";
 import "../styles/flexslider.css";
