@@ -1,8 +1,8 @@
-import React from "react";
+import { Element } from "react-scroll";
 
 const Work = () => {
   return (
-    <section className="colorlib-work" data-section="work">
+    <Element name="work" className="colorlib-work" data-section="work">
       <div className="colorlib-narrow-content">
         <div className="row">
           <div
@@ -255,7 +255,7 @@ const Work = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 

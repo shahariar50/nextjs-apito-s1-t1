@@ -1,8 +1,8 @@
-import React from "react";
+import { Element } from "react-scroll";
 
 const Contact = () => {
   return (
-    <section className="colorlib-contact" data-section="contact">
+    <Element name="contact" className="colorlib-contact" data-section="contact">
       <div className="colorlib-narrow-content">
         <div className="row">
           <div
@@ -106,7 +106,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 

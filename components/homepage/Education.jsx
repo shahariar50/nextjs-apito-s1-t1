@@ -1,8 +1,13 @@
 import { Accordion } from "react-bootstrap";
+import { Element } from "react-scroll";
 
 const Education = () => {
   return (
-    <section className="colorlib-education" data-section="education">
+    <Element
+      name="education"
+      className="colorlib-education"
+      data-section="education"
+    >
       <div className="colorlib-narrow-content">
         <div className="row">
           <div
@@ -101,7 +106,7 @@ const Education = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 

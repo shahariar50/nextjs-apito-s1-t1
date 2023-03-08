@@ -1,9 +1,8 @@
-import Image from "next/image";
-import React from "react";
+import { Element } from "react-scroll";
 
 const Blog = () => {
   return (
-    <section className="colorlib-blog" data-section="blog">
+    <Element name="blog" className="colorlib-blog" data-section="blog">
       <div className="colorlib-narrow-content">
         <div className="row">
           <div
@@ -123,7 +122,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 

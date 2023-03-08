@@ -1,6 +1,12 @@
+import { Element } from "react-scroll";
+
 const Experence = () => {
   return (
-    <section className="colorlib-experience" data-section="experience">
+    <Element
+      name="experience"
+      className="colorlib-experience"
+      data-section="experience"
+    >
       <div className="colorlib-narrow-content">
         <div className="row">
           <div
@@ -140,7 +146,7 @@ const Experence = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 
