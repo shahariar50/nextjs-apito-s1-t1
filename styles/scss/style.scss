@@ -1201,14 +1201,13 @@ body {
 .work-menu {
   span {
     margin-left: 10px;
+    cursor: pointer;
     &:first-child {
       margin-left: 0;
     }
-    a {
-      color: $brand-black;
-      &.active {
-        color: $brand-primary;
-      }
+    color: $brand-black;
+    &.active {
+      color: $brand-primary;
     }
   }
 }
