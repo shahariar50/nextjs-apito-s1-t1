@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Element } from "react-scroll";
 
 const Work = () => {
+  const [selectedGallery, setSelectedGallery] = useState();
+
   return (
     <Element name="work" className="colorlib-work" data-section="work">
       <div className="colorlib-narrow-content">
