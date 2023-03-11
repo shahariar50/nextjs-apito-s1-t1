@@ -11,7 +11,7 @@ const Aside = () => {
       <div className="text-center">
         <div
           className="author-img"
-          style={{ backgroundImage: "url(images/about.jpg);" }}
+          style={{ backgroundImage: "url(images/about.jpg)" }}
         ></div>
         <h1 id="colorlib-logo">
           <a href="index.html">Jackson Ford</a>

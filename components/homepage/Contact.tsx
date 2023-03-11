@@ -87,8 +87,8 @@ const Contact = () => {
                     <textarea
                       name=""
                       id="message"
-                      cols="30"
-                      rows="7"
+                      cols={30}
+                      rows={7}
                       className="form-control"
                       placeholder="Message"
                     ></textarea>

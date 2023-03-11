@@ -1,19 +1,20 @@
-import Aside from "components/Aside";
-import About from "components/homepage/About";
-import Blog from "components/homepage/Blog";
-import Contact from "components/homepage/Contact";
-import Education from "components/homepage/Education";
-import Experence from "components/homepage/Experence";
-import Hero from "components/homepage/Hero";
-import Services from "components/homepage/Services";
-import Skills from "components/homepage/Skills";
-import Work from "components/homepage/Work";
-import WorkStatus from "components/homepage/WorkStatus";
 import { useEffect } from "react";
+import Aside from "../components/Aside";
+import About from "../components/homepage/About";
+import Blog from "../components/homepage/Blog";
+import Contact from "../components/homepage/Contact";
+import Education from "../components/homepage/Education";
+import Experence from "../components/homepage/Experence";
+import Hero from "../components/homepage/Hero";
+import Services from "../components/homepage/Services";
+import Skills from "../components/homepage/Skills";
+import Work from "../components/homepage/Work";
+import WorkStatus from "../components/homepage/WorkStatus";
 import "/public/static/js/loader.js";
 
 export default function Home() {
   useEffect(() => {
+    // @ts-ignore
     window.$ = window.jQuery = require("jquery");
   }, []);
 
