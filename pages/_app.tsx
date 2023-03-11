@@ -12,8 +12,9 @@ import "../styles/icomoon.css";
 import "../styles/scss/style.scss";
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const client = new ApolloClient({
     uri: "https://api.apito.io/secured/graphql",
     cache: new InMemoryCache(),
