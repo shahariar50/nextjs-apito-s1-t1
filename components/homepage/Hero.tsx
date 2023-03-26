@@ -1,9 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useQuery } from "@apollo/client";
 import { Element } from "react-scroll";
 import { EffectFade, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { JACKSON_HOMEPAGE_DATA } from "../../graphql/homepage.query";
 
 const Hero = () => {
+  const { data } = useQuery(JACKSON_HOMEPAGE_DATA);
+
   return (
     <Element
       name="hero"
@@ -11,92 +15,58 @@ const Hero = () => {
       className="js-fullheight"
       data-section="home"
     >
-      <Swiper
-        modules={[EffectFade, Pagination]}
-        spaceBetween={50}
-        slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        loop
-        pagination={{
-          dynamicBullets: true,
-          clickable: true,
-        }}
-      >
-        <SwiperSlide
-          style={{
-            backgroundImage: `url(/static/img_bg_1.jpg)`,
-            height: "100vh",
+      {data?.home?.data?.heros?.length ? (
+        <Swiper
+          modules={[EffectFade, Pagination]}
+          spaceBetween={50}
+          slidesPerView={1}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          loop
+          pagination={{
+            dynamicBullets: true,
+            clickable: true,
           }}
         >
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                <div className="slider-text-inner js-fullheight">
-                  <div className="desc">
-                    <h1>
-                      Hi! <br />
-                      I'm Jackson
-                    </h1>
-                    <h2>
-                      100% html5 bootstrap templates Made by{" "}
-                      <a
-                        href="https://colorlib.com/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        colorlib.com
-                      </a>
-                    </h2>
-                    <p>
-                      <a className="btn btn-primary btn-learn">
-                        Download CV <i className="icon-download4"></i>
-                      </a>
-                    </p>
+          {data.home.data.heros.map((slide: any) => (
+            <SwiperSlide
+              style={{
+                backgroundImage: `url(${slide.bg_image.url})`,
+                height: "100vh",
+              }}
+              key={slide.id}
+            >
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+                    <div className="slider-text-inner js-fullheight">
+                      <div className="desc">
+                        <h1
+                          dangerouslySetInnerHTML={{
+                            __html: slide.greeting_text.html,
+                          }}
+                        ></h1>
+                        <h2
+                          dangerouslySetInnerHTML={{
+                            __html: slide.tag_line.html,
+                          }}
+                        ></h2>
+                        <p>
+                          <a className="btn btn-primary btn-learn">
+                            Download CV <i className="icon-download4"></i>
+                          </a>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          style={{
-            backgroundImage: `url(/static/img_bg_2.jpg)`,
-            height: "100vh",
-          }}
-        >
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                <div className="slider-text-inner">
-                  <div className="desc">
-                    <h1>
-                      I am <br />a Designer
-                    </h1>
-                    <h2>
-                      100% html5 bootstrap templates Made by{" "}
-                      <a
-                        href="https://colorlib.com/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        colorlib.com
-                      </a>
-                    </h2>
-                    <p>
-                      <a className="btn btn-primary btn-learn">
-                        View Portfolio <i className="icon-briefcase3"></i>
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        ""
+      )}
     </Element>
   );
 };

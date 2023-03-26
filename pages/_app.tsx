@@ -11,19 +11,11 @@ import "../styles/flexslider.css";
 import "../styles/icomoon.css";
 import "../styles/scss/style.scss";
 
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 import { AppProps } from "next/app";
+import { apolloPrivateInit } from "../utils/apollo-private";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const client = new ApolloClient({
-    uri: "https://api.apito.io/secured/graphql",
-    cache: new InMemoryCache(),
-    headers: {
-      authorization:
-        "2QsDqzg7qGNZ7PHEokUY83XI2wjoakidEEgsFrg3x1P5vG4tvjUGgVNmdRG66DUMJr0igDsmawnJ0SdPdBSiEijswD8GiS00R8f3E654272BPTxTSc3FLP0j0mUa53e65A7gZqZLZQQzE2R8p26TNJJ2ULS8WbLH5kn7pSX1Fn",
-    },
-  });
-
   useEffect(() => {
     Events.scrollEvent.register("begin", function () {
       console.log("begin", arguments);
@@ -38,6 +30,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       Events.scrollEvent.remove("end");
     };
   });
+
+  const client = apolloPrivateInit();
 
   return (
     <ApolloProvider client={client}>
