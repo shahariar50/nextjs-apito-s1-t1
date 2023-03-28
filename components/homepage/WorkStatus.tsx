@@ -1,68 +1,46 @@
-import bg from "/public/static/cover_bg_1.jpg";
+import { useQuery } from "@apollo/client";
+import { JACKSON_SERVICES_DATA } from "../../graphql/homepage.query";
 
 const WorkStatus = () => {
+  const { data } = useQuery(JACKSON_SERVICES_DATA);
+
   return (
-    <section
-      id="colorlib-counter"
-      className="colorlib-counters"
-      style={{ backgroundImage: `url(${bg?.src})` }}
-      data-stellar-background-ratio="0.5"
-    >
-      <div className="overlay"></div>
-      <div className="colorlib-narrow-content">
-        <div className="row"></div>
-        <div className="row">
-          <div className="col-md-3 text-center animate-box">
-            <span
-              className="colorlib-counter js-counter"
-              data-from="0"
-              data-to="309"
-              data-speed="5000"
-              data-refresh-interval="50"
-            >
-              309
-            </span>
-            <span className="colorlib-counter-label">Cups of coffee</span>
+    <div>
+      {data && (
+        <section
+          id="colorlib-counter"
+          className="colorlib-counters"
+          style={{ backgroundImage: `url(${data.service.data.statistics_bg})` }}
+          data-stellar-background-ratio="0.5"
+        >
+          <div className="overlay"></div>
+          <div className="colorlib-narrow-content">
+            <div className="row"></div>
+            <div className="row">
+              {data.service.data.statistics.map((statistic: any) => (
+                <div
+                  className="col-md-3 text-center animate-box"
+                  key={statistic.id}
+                >
+                  <span
+                    className="colorlib-counter js-counter"
+                    data-from="0"
+                    data-to="309"
+                    data-speed="5000"
+                    data-refresh-interval="50"
+                  >
+                    {statistic.number}
+                  </span>
+                  <span className="colorlib-counter-label">
+                    {statistic.title}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="col-md-3 text-center animate-box">
-            <span
-              className="colorlib-counter js-counter"
-              data-from="0"
-              data-to="356"
-              data-speed="5000"
-              data-refresh-interval="50"
-            >
-              356
-            </span>
-            <span className="colorlib-counter-label">Projects</span>
-          </div>
-          <div className="col-md-3 text-center animate-box">
-            <span
-              className="colorlib-counter js-counter"
-              data-from="0"
-              data-to="30"
-              data-speed="5000"
-              data-refresh-interval="50"
-            >
-              30
-            </span>
-            <span className="colorlib-counter-label">Clients</span>
-          </div>
-          <div className="col-md-3 text-center animate-box">
-            <span
-              className="colorlib-counter js-counter"
-              data-from="0"
-              data-to="10"
-              data-speed="5000"
-              data-refresh-interval="50"
-            >
-              10
-            </span>
-            <span className="colorlib-counter-label">Partners</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      )}
+    </div>
   );
 };
 
