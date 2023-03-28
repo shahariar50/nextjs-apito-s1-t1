@@ -75,3 +75,21 @@ export const JACKSON_SERVICES_DATA = gql`
     }
   }
 `;
+
+export const JACKSON_SKILL_DATA = gql`
+  query SkillData {
+    skill {
+      data {
+        description {
+          html
+        }
+        skills {
+          _id
+          color_code
+          name
+          skill_percentage
+        }
+      }
+    }
+  }
+`;
