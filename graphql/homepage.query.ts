@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-export const JACKSON_HOMEPAGE_DATA = gql`
-  query HomepageData {
+export const JACKSON_HERO_DATA = gql`
+  query HeroData {
     home {
       data {
         heros {
@@ -17,6 +17,29 @@ export const JACKSON_HOMEPAGE_DATA = gql`
           tag_line {
             html
           }
+        }
+      }
+    }
+  }
+`;
+
+export const JACKSON_ABOUT_DATA = gql`
+  query AboutData {
+    about {
+      data {
+        happy_text
+        long_bio {
+          html
+        }
+        skills {
+          _id
+          color_code
+          icon {
+            file_name
+            id
+            url
+          }
+          name
         }
       }
     }

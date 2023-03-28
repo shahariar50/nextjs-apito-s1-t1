@@ -3,10 +3,10 @@ import { useQuery } from "@apollo/client";
 import { Element } from "react-scroll";
 import { EffectFade, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { JACKSON_HOMEPAGE_DATA } from "../../graphql/homepage.query";
+import { JACKSON_HERO_DATA } from "../../graphql/homepage.query";
 
 const Hero = () => {
-  const { data } = useQuery(JACKSON_HOMEPAGE_DATA);
+  const { data } = useQuery(JACKSON_HERO_DATA);
 
   return (
     <Element
