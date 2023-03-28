@@ -45,3 +45,33 @@ export const JACKSON_ABOUT_DATA = gql`
     }
   }
 `;
+
+export const JACKSON_SERVICES_DATA = gql`
+  query ServiceData {
+    service {
+      data {
+        experiences {
+          _id
+          color_code
+          description
+          icon {
+            file_name
+            id
+            url
+          }
+          title
+        }
+        statistics_bg {
+          file_name
+          id
+          url
+        }
+        statistics {
+          _id
+          number
+          title
+        }
+      }
+    }
+  }
+`;
