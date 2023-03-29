@@ -93,3 +93,96 @@ export const JACKSON_SKILL_DATA = gql`
     }
   }
 `;
+export const JACKSON_EDUCATION_DATA = gql`
+  query EducationData {
+    educations {
+      data {
+        details {
+          html
+        }
+        title
+      }
+      id
+    }
+  }
+`;
+export const JACKSON_EXPERIENCE_DATA = gql`
+  query ExperienceData {
+    experiences {
+      id
+      data {
+        color_code
+        from_and_to_date
+        title
+        details {
+          html
+        }
+      }
+    }
+  }
+`;
+export const JACKSON_WORKS_DATA = gql`
+  query WorksData {
+    works {
+      id
+      data {
+        categories
+        title
+        cover {
+          file_name
+          id
+          url
+        }
+      }
+    }
+  }
+`;
+export const JACKSON_BLOG_DATA = gql`
+  query BlogData {
+    blogPosts {
+      data {
+        body {
+          html
+        }
+        cover {
+          file_name
+          url
+          id
+        }
+        date
+        title
+      }
+      id
+    }
+  }
+`;
+export const JACKSON_CONTACT_DATA = gql`
+  query ContactData {
+    contact {
+      data {
+        phone
+        email
+        address {
+          html
+        }
+      }
+    }
+  }
+`;
+export const JACKSON_SITEINFO_DATA = gql`
+  query SiteInfoData {
+    siteInfo {
+      data {
+        bio
+        copyright
+        website_title
+        avatar {
+          file_name
+          id
+          url
+        }
+        tag_line
+      }
+    }
+  }
+`;
