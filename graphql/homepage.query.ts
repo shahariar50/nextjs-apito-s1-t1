@@ -146,13 +146,18 @@ export const JACKSON_BLOG_DATA = gql`
         }
         cover {
           file_name
-          url
           id
+          url
         }
         date
         title
       }
       id
+      workCategories {
+        data {
+          name
+        }
+      }
     }
   }
 `;
