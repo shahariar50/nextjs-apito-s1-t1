@@ -1,6 +1,10 @@
+import { useQuery } from "@apollo/client";
 import { Link } from "react-scroll";
+import { JACKSON_CONTACT_DATA } from "../graphql/homepage.query";
 
 const Aside = () => {
+  const { data } = useQuery(JACKSON_CONTACT_DATA);
+
   return (
     <aside
       id="colorlib-aside"

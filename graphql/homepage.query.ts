@@ -161,15 +161,16 @@ export const JACKSON_BLOG_DATA = gql`
     }
   }
 `;
+
 export const JACKSON_CONTACT_DATA = gql`
-  query ContactData {
-    contact {
+  query ContactSectionData {
+    contactSection {
       data {
-        phone
-        email
         address {
           html
         }
+        email
+        phone
       }
     }
   }
