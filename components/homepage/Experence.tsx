@@ -32,7 +32,7 @@ const Experence = () => {
                     key={exprience.id}
                   >
                     <div className="timeline-entry-inner">
-                      <div className={`timeline-icon color-${index}`}>
+                      <div className={`timeline-icon color-${index + 1}`}>
                         <i className="icon-pen2"></i>
                       </div>
 

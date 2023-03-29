@@ -1,8 +1,25 @@
+import { useQuery } from "@apollo/client";
 import { useState } from "react";
 import { Element } from "react-scroll";
+import { JACKSON_WORKS_DATA } from "../../graphql/homepage.query";
 
 const Work = () => {
-  const [selectedGallery, setSelectedGallery] = useState("all");
+  const [selectedGallery, setSelectedGallery] = useState("All");
+  const { data } = useQuery(JACKSON_WORKS_DATA);
+
+  let categories = ["All"];
+  if (data?.works) {
+    categories = [
+      // @ts-ignore
+      ...new Set([
+        ...categories,
+        ...data?.works.reduce(
+          (accum: any, item: any) => [...accum, ...item.data.categories],
+          []
+        ),
+      ]),
+    ];
+  }
 
   const galleryList = [
     {
@@ -51,109 +68,93 @@ const Work = () => {
 
   return (
     <Element name="work" className="colorlib-work" data-section="work">
-      <div className="colorlib-narrow-content">
-        <div className="row">
+      {data && (
+        <div className="colorlib-narrow-content">
+          <div className="row">
+            <div
+              className="col-md-6 col-md-offset-3 col-md-pull-3"
+              data-animate-effect="fadeInLeft"
+            >
+              <span className="heading-meta">My Work</span>
+              <h2 className="colorlib-heading">Recent Work</h2>
+            </div>
+          </div>
           <div
-            className="col-md-6 col-md-offset-3 col-md-pull-3"
+            className="row row-bottom-padded-sm"
             data-animate-effect="fadeInLeft"
           >
-            <span className="heading-meta">My Work</span>
-            <h2 className="colorlib-heading">Recent Work</h2>
+            <div className="col-md-12">
+              <p className="work-menu">
+                {categories.map((category) => (
+                  <span
+                    className={selectedGallery === category ? "active" : ""}
+                    onClick={() => setSelectedGallery(category)}
+                  >
+                    {category}
+                  </span>
+                ))}
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          className="row row-bottom-padded-sm"
-          data-animate-effect="fadeInLeft"
-        >
-          <div className="col-md-12">
-            <p className="work-menu">
-              <span
-                className={selectedGallery === "all" ? "active" : ""}
-                onClick={() => setSelectedGallery("all")}
-              >
-                All
-              </span>{" "}
-              <span
-                className={selectedGallery === "graphicDesign" ? "active" : ""}
-                onClick={() => setSelectedGallery("graphicDesign")}
-              >
-                Graphic Design
-              </span>
-              <span
-                className={selectedGallery === "webDesign" ? "active" : ""}
-                onClick={() => setSelectedGallery("webDesign")}
-              >
-                Web Design
-              </span>{" "}
-              <span
-                className={selectedGallery === "software" ? "active" : ""}
-                onClick={() => setSelectedGallery("software")}
-              >
-                Software
-              </span>{" "}
-              <span
-                className={selectedGallery === "apps" ? "active" : ""}
-                onClick={() => setSelectedGallery("apps")}
-              >
-                Apps
-              </span>
-            </p>
-          </div>
-        </div>
-        <div className="row">
-          {galleryList
-            .filter((gallery) =>
-              gallery.category_slag.includes(selectedGallery)
-            )
-            .map((gallery) => (
-              <div
-                className="col-md-6"
-                data-animate-effect="fadeInLeft"
-                key={gallery.id}
-              >
+          <div className="row">
+            {data.works
+              .filter((gallery: any) =>
+                ["All", ...gallery.data.categories].includes(selectedGallery)
+              )
+              .map((gallery: any) => (
                 <div
-                  className="project"
-                  style={{ backgroundImage: `url(${gallery.img})` }}
+                  className="col-md-6"
+                  data-animate-effect="fadeInLeft"
+                  key={gallery.id}
                 >
-                  <div className="desc">
-                    <div className="con">
-                      <h3>
-                        <a href="work.html">{gallery.title}</a>
-                      </h3>
-                      <span>{gallery.category}</span>
-                      <p className="icon">
-                        <span>
-                          <a href="#">
-                            <i className="icon-share3"></i>
-                          </a>
-                        </span>
-                        <span>
-                          <a href="#">
-                            <i className="icon-eye"></i> 100
-                          </a>
-                        </span>
-                        <span>
-                          <a href="#">
-                            <i className="icon-heart"></i> 49
-                          </a>
-                        </span>
-                      </p>
+                  <div
+                    className="project"
+                    style={{
+                      backgroundImage: `url(${gallery.data.cover.url})`,
+                    }}
+                  >
+                    <div className="desc">
+                      <div className="con">
+                        <h3>
+                          <a href="work.html">{gallery.data.title}</a>
+                        </h3>
+                        {gallery.data.categories.map((item: string) => (
+                          <span>{item} </span>
+                        ))}
+                        <p className="icon">
+                          <span>
+                            <a href="#">
+                              <i className="icon-share3"></i>
+                            </a>
+                          </span>
+                          <span>
+                            <a href="#">
+                              <i className="icon-eye"></i> 100
+                            </a>
+                          </span>
+                          <span>
+                            <a href="#">
+                              <i className="icon-heart"></i> 49
+                            </a>
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-        </div>
-        <div className="row">
-          <div className="col-md-12">
-            <p>
-              <a href="#" className="btn btn-primary btn-lg btn-load-more">
-                Load more <i className="icon-reload"></i>
-              </a>
-            </p>
+              ))}
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <p>
+                <a href="#" className="btn btn-primary btn-lg btn-load-more">
+                  Load more <i className="icon-reload"></i>
+                </a>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </Element>
   );
 };
