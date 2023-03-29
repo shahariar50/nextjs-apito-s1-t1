@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { Link } from "react-scroll";
-import { JACKSON_CONTACT_DATA } from "../graphql/homepage.query";
+import { JACKSON_SITEINFO_DATA } from "../graphql/homepage.query";
 
 const Aside = () => {
-  const { data } = useQuery(JACKSON_CONTACT_DATA);
+  const { data } = useQuery(JACKSON_SITEINFO_DATA);
 
   return (
     <aside
@@ -15,14 +15,14 @@ const Aside = () => {
       <div className="text-center">
         <div
           className="author-img"
-          style={{ backgroundImage: "url(images/about.jpg)" }}
+          style={{
+            backgroundImage: `url(${data?.siteInfo?.data?.avatar?.url})`,
+          }}
         ></div>
         <h1 id="colorlib-logo">
-          <a href="index.html">Jackson Ford</a>
+          <a href="index.html">{data?.siteInfo?.data?.website_title}</a>
         </h1>
-        <span className="position">
-          <a href="#">UI/UX/Designer</a> in Philippines
-        </span>
+        <span className="position">{data?.siteInfo?.data?.tag_line}</span>
       </div>
       <nav id="colorlib-main-menu" role="navigation" className="navbar">
         <div id="navbar" className="collapse">
@@ -132,25 +132,7 @@ const Aside = () => {
 
       <div className="colorlib-footer">
         <p>
-          <small>
-            &copy; Copyright {new Date().getFullYear()} All rights reserved.
-            Made with <i className="icon-heart" aria-hidden="true"></i> by{" "}
-            <a href="https://colorlib.com" target="_blank" rel="noreferrer">
-              Colorlib
-            </a>
-            <span>
-              Distributed by{" "}
-              <a href="https://themewagon.com" target="_blank" rel="noreferrer">
-                ThemeWagon
-              </a>
-            </span>{" "}
-            <span>
-              Demo Images:{" "}
-              <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
-                Unsplash.com
-              </a>
-            </span>
-          </small>
+          <small>{data?.siteInfo?.data?.copyright}</small>
         </p>
         <ul>
           <li>
